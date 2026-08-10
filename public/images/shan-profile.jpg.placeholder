@@ -1,4 +1,0 @@
-Copy the exact profile photograph from Shan's coaching website into this folder as:
-shan-profile.jpg
-
-Then set contact.profilePhoto to "/images/shan-profile.jpg" in app/portfolio-data.ts.

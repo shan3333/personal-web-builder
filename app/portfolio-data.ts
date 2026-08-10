@@ -2,9 +2,9 @@
 export const contact = {
   email: "sliu10133@gmail.com",
   linkedin: "https://www.linkedin.com/in/shan-liu-6b5800195/",
-  github: "https://github.com/", // Temporary: replace with Shan's personal profile URL.
-  cv: "", // Existing CV action remains disabled until its file path is configured.
-  profilePhoto: "", // After copying the coaching photo, set this to "/images/shan-profile.jpg".
+  github: "https://github.com/shan3333",
+  cv: "/shan-liu-cv.pdf",
+  profilePhoto: "/images/shan-profile.jpg",
 };
 
 export const projects = [
