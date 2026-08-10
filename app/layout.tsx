@@ -6,6 +6,7 @@ const geist = Geist({ variable: "--font-sans", subsets: ["latin"] });
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://shan.authenticbecome.com"),
   title: "Shan Liu | Software Engineer & Builder",
   description: "Software Engineer and builder based in the Netherlands, specializing in backend systems, APIs, automation, performance engineering, and AI-assisted product development.",
   keywords: ["Shan Liu", "Software Engineer", "Backend Engineer", "Software Engineer Netherlands", "Remote Software Engineer", "Symfony Engineer", "Automation Engineer", "AI-assisted Development"],
