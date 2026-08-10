@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   title: "Shan Liu | Software Engineer & Builder",
   description: "Software Engineer and builder based in the Netherlands, specializing in backend systems, APIs, automation, performance engineering, and AI-assisted product development.",
   keywords: ["Shan Liu", "Software Engineer", "Backend Engineer", "Software Engineer Netherlands", "Remote Software Engineer", "Symfony Engineer", "Automation Engineer", "AI-assisted Development"],
-  openGraph: { title: "Shan Liu | Software Engineer & Builder", description: "Reliable backend systems, automation tools, and small products for real-world problems.", type: "website", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Shan Liu — Software Engineer & Builder" }] },
-  twitter: { card: "summary_large_image", title: "Shan Liu | Software Engineer & Builder", description: "Reliable backend systems, automation tools, and small products for real-world problems.", images: ["/og.png"] },
+  openGraph: { title: "Shan Liu | Software Engineer & Builder", description: "Reliable backend systems, automation tools, and small products for real-world problems.", type: "website", images: [{ url: "/og-warm.png", width: 1200, height: 630, alt: "Shan Liu — Software Engineer & Builder" }] },
+  twitter: { card: "summary_large_image", title: "Shan Liu | Software Engineer & Builder", description: "Reliable backend systems, automation tools, and small products for real-world problems.", images: ["/og-warm.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
