@@ -64,7 +64,7 @@ export default function Home() {
       <section className="section impact-section" id="impact">
         <div className="shell">
           <div className="section-heading compact"><div><span className="index">02</span><p className="kicker">Engineering impact</p></div><h2>Measured in<br /><em>outcomes.</em></h2></div>
-          <div className="impact-grid">{impact.map((item, i) => <article className="impact-card" key={item.label}><span>0{i + 1}</span><p className="impact-label">{item.label}</p><strong>{item.metric}</strong><p>{item.story}</p></article>)}</div>
+          <div className="impact-grid">{impact.map((item, i) => <article className="impact-card" key={item.label}><span>0{i + 1}</span><p className="impact-label">{item.label}</p><strong>{item.metric}</strong><p className="impact-clarification">{item.clarification}</p><p className="impact-story">{item.story}</p></article>)}</div>
           <div className="delivery-strip"><span>Delivery</span><strong>Days → Hours</strong><p>Contributed to deployment and infrastructure improvements that made releases dramatically faster.</p></div>
         </div>
       </section>

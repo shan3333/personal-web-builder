@@ -9,15 +9,15 @@ export const contact = {
 
 export const projects = [
   { title: "The Hague Appointment Alert", description: "A hosted monitoring service that checks municipality appointment availability and alerts users when suitable dates appear.", longDescription: "Built from a problem experienced first-hand and designed as an extensible service—not a one-off script.", technologies: ["TypeScript", "Node.js", "Playwright", "Telegram", "Google Cloud", "Codex"], highlights: ["Matches multiple services against customer-specific date preferences", "Real monitoring and simulation modes with automated testing and CI", "Continuously deployed for monitoring, with room to expand to more municipalities"], githubUrl: "", liveUrl: "", image: "", status: "Active build", featured: true, mark: "DH" },
-  { title: "API Change Assistant", description: "A backend system for ingesting and processing API-change events reliably using asynchronous workflows and database-backed state.", longDescription: "Reliability-focused event processing with explicit safeguards for retries, duplication, and concurrency.", technologies: ["PHP", "Symfony", "PostgreSQL", "Redis", "Docker", "Webhooks"], highlights: ["Processes GitHub webhooks and prevents duplicate event handling", "Redis-backed Messenger jobs with asynchronous retries", "Transactions, locking, automated tests, and CI for concurrency safety"], githubUrl: "", liveUrl: "", image: "", status: "Case study", featured: false, mark: "API" },
+  { title: "API Change Assistant", description: "A backend system for ingesting and processing API-change events reliably using asynchronous workflows and database-backed state.", longDescription: "Reliability-focused event processing with explicit safeguards for retries, duplication, and concurrency.", technologies: ["PHP", "Symfony", "PostgreSQL", "Redis", "Docker", "Webhooks"], highlights: ["Processes GitHub webhooks and prevents duplicate event handling", "Redis-backed Messenger jobs with asynchronous retries", "Transactions, locking, automated tests, and CI for concurrency safety"], githubUrl: "https://github.com/shan3333/api-change-assistant", liveUrl: "", image: "", status: "Case study", featured: false, mark: "API" },
 ];
 
 export const impact = [
-  { label: "Performance", metric: "416 → 2", story: "Eliminated an N+1 ORM problem, reducing endpoint latency from 213ms to 13ms." },
-  { label: "Architecture", metric: "97% faster", story: "Compared three solutions, built proofs of concept, and presented the chosen materialized-view approach to a Technical Design Authority." },
-  { label: "Testing", metric: "5,000+", story: "Co-developed an API testing framework that became widely adopted across the team." },
-  { label: "Security", metric: "121 → 0", story: "Introduced daily vulnerability scanning across more than ten services." },
-  { label: "Automation", metric: "Hours → Min", story: "Automated SDK generation workflows while preserving repeatability and quality checks." },
+  { label: "Performance", metric: "416 → 2", clarification: "Queries per request", story: "Resolved an N+1 ORM issue, reducing endpoint latency from 213ms to 13ms." },
+  { label: "Architecture", metric: "97%", clarification: "Performance improvement", story: "Compared multiple architectural approaches and built proof-of-concept evidence. The selected materialized-view solution improved performance by 97%." },
+  { label: "Testing", metric: "5,000+", clarification: "API tests", story: "Co-developed an API testing framework that was adopted team-wide, improving backend test quality and coverage." },
+  { label: "Security", metric: "121 → 0", clarification: "Vulnerabilities", story: "Introduced daily vulnerability scanning across 10+ services and coordinated remediation until known vulnerabilities were reduced to zero." },
+  { label: "Automation", metric: "Hours → Min", clarification: "SDK generation time", story: "Automated SDK generation workflows, reducing generation time from hours to minutes while preserving repeatability and quality checks." },
 ];
 
 export const experience = [
