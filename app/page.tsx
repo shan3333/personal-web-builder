@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { projects, skills, experience, impact, links } from "./portfolio-data";
+import Image from "next/image";
+import { projects, skills, experience, impact, contact } from "./portfolio-data";
 
 export const metadata: Metadata = {
   title: "Shan Liu | Software Engineer & Builder",
@@ -27,15 +28,15 @@ export default function Home() {
           <p className="hero-copy">I build reliable backend systems, automation tools, and small products that solve <strong>real-world problems.</strong></p>
           <div className="hero-actions">
             <a className="button primary" href="#projects">View projects <span>↓</span></a>
-            {links.cv ? <a className="button secondary" href={links.cv} download>Download CV</a> : <span className="button secondary unavailable" title="CV link coming soon">Download CV</span>}
+            {contact.cv ? <a className="button secondary" href={contact.cv} download>Download CV</a> : <span className="button secondary unavailable" title="CV link coming soon">Download CV</span>}
           </div>
         </div>
         <div className="hero-meta">
           <p>6 years across backend systems, APIs, databases, infrastructure, performance engineering, and automation. Now using AI-assisted development to turn useful ideas into working products faster.</p>
           <div className="socials">
-            {links.github && <a href={links.github}>GitHub <Arrow /></a>}
-            {links.linkedin && <a href={links.linkedin}>LinkedIn <Arrow /></a>}
-            {links.email && <a href={`mailto:${links.email}`}>Email <Arrow /></a>}
+            <a href={contact.github}>GitHub <Arrow /></a>
+            <a href={contact.linkedin}>LinkedIn <Arrow /></a>
+            <a href={`mailto:${contact.email}`}>Email <Arrow /></a>
           </div>
         </div>
       </section>
@@ -84,7 +85,7 @@ export default function Home() {
 
       <section className="section about-section" id="about">
         <div className="shell about-grid">
-          <div><span className="index">05</span><p className="kicker">About</p><div className="monogram">SL</div></div>
+          <div className="about-aside"><span className="index">05</span><p className="kicker">About</p>{contact.profilePhoto ? <Image className="profile-photo" src={contact.profilePhoto} alt="Shan Liu" width={720} height={900} /> : <div className="profile-placeholder" role="img" aria-label="Profile photo placeholder"><span>SL</span><small>Profile photo</small></div>}</div>
           <div className="about-copy"><h2>I like finding overlooked problems and turning them into <em>useful software.</em></h2><p>My background is primarily in backend engineering, but I increasingly enjoy owning the complete journey: identifying a problem, designing a solution, building it, deploying it, and learning from real users.</p><p>AI-assisted development has made that process even more interesting. It helps me experiment, test assumptions, and ship ideas faster—without compromising the engineering fundamentals that make software dependable.</p><div className="interests"><span>Backend systems</span><span>Automation</span><span>Developer tooling</span><span>Small SaaS</span><span>AI-assisted building</span></div></div>
         </div>
       </section>
@@ -94,7 +95,7 @@ export default function Home() {
         <div className="education-grid"><article><span>2021 · Distinction</span><h3>MSc Advanced Computer Science</h3><p>University of Sheffield</p><small>Machine learning, NLP, software design, and research into deep learning for brain disease diagnosis.</small></article><article><span>2019</span><h3>BEng Computer Science</h3><p>Nagoya Institute of Technology</p><small>Automated negotiation research, two publications, and award-winning negotiation agents at PRIANAC and ANAC 2018.</small></article></div>
       </section>
 
-      <section className="contact" id="contact"><div className="shell"><span className="index">06</span><p className="kicker">Start a conversation</p><h2>Let’s build<br /><em>something useful.</em></h2><p>I’m interested in remote software engineering opportunities, product-focused teams, and interesting collaborations.</p>{links.email ? <a className="contact-link" href={`mailto:${links.email}`}>Send me an email <Arrow /></a> : <span className="contact-link unavailable" title="Add an email address in portfolio-data.ts">Contact details coming soon</span>}<footer><span>Shan Liu © 2026</span><span>Software Engineer &amp; Builder · Netherlands</span><a href="#home">Back to top ↑</a></footer></div></section>
+      <section className="contact" id="contact"><div className="shell"><span className="index">06</span><p className="kicker">Start a conversation</p><h2>Let’s <em>connect.</em></h2><p>I’m interested in remote software engineering opportunities, product-focused teams, and interesting collaborations.</p><div className="contact-links"><a href={`mailto:${contact.email}`}><span aria-hidden="true">@</span><strong>Email</strong><Arrow /></a><a href={contact.linkedin}><span aria-hidden="true">in</span><strong>LinkedIn</strong><Arrow /></a><a href={contact.github}><span aria-hidden="true">gh</span><strong>GitHub</strong><Arrow /></a>{contact.cv ? <a href={contact.cv} download><span aria-hidden="true">↓</span><strong>Download CV</strong></a> : <span className="contact-item-disabled" title="CV link coming soon"><span aria-hidden="true">↓</span><strong>Download CV</strong></span>}</div><footer><span>Shan Liu © 2026</span><span>Software Engineer &amp; Builder · Netherlands</span><a href="#home">Back to top ↑</a></footer></div></section>
     </main>
   );
 }

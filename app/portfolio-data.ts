@@ -1,5 +1,11 @@
-// Add real destinations here when available. Empty values stay safely hidden or disabled.
-export const links = { email: "", github: "", linkedin: "", cv: "" };
+// Keep personal destinations centralized so temporary URLs are easy to replace.
+export const contact = {
+  email: "sliu10133@gmail.com",
+  linkedin: "https://www.linkedin.com/in/shan-liu-6b5800195/",
+  github: "https://github.com/", // Temporary: replace with Shan's personal profile URL.
+  cv: "", // Existing CV action remains disabled until its file path is configured.
+  profilePhoto: "", // After copying the coaching photo, set this to "/images/shan-profile.jpg".
+};
 
 export const projects = [
   { title: "The Hague Appointment Alert", description: "A hosted monitoring service that checks municipality appointment availability and alerts users when suitable dates appear.", longDescription: "Built from a problem experienced first-hand and designed as an extensible service—not a one-off script.", technologies: ["TypeScript", "Node.js", "Playwright", "Telegram", "Google Cloud", "Codex"], highlights: ["Matches multiple services against customer-specific date preferences", "Real monitoring and simulation modes with automated testing and CI", "Continuously deployed for monitoring, with room to expand to more municipalities"], githubUrl: "", liveUrl: "", image: "", status: "Active build", featured: true, mark: "DH" },
