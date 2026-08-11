@@ -1,28 +1,31 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import { createServer } from "node:http";
 import test from "node:test";
 
 async function render() {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
+  const html = await readFile(new URL("../out/index.html", import.meta.url));
+  const server = createServer((request, response) => {
+    if (request.url !== "/") {
+      response.writeHead(404).end("Not found");
+      return;
+    }
 
-  return worker.fetch(
-    new Request("http://localhost/", {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
-  );
+    response.writeHead(200, { "content-type": "text/html; charset=utf-8" });
+    response.end(html);
+  });
+
+  await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+  const address = server.address();
+
+  try {
+    return await fetch(`http://127.0.0.1:${address.port}/`);
+  } finally {
+    server.close();
+  }
 }
 
-test("server-renders the portfolio home page", async () => {
+test("static export renders the portfolio home page", async () => {
   const response = await render();
 
   assert.equal(response.status, 200);

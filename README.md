@@ -8,11 +8,12 @@ Personal portfolio for Shan Liu, focused on backend engineering, automation, AI-
 
 ## Tech stack
 
-- Vinext
+- Next.js
 - React
 - Tailwind CSS
-- Cloudflare Workers
-- Wrangler
+- TypeScript
+- ESLint
+- Cloudflare Pages
 
 ## Local development
 
@@ -28,15 +29,12 @@ npm run dev
 ```bash
 npm run build
 npm run lint
+npm run typecheck
 npm test
 ```
 
-The test command builds the site and runs the rendered HTML smoke tests using Node's built-in test runner.
+The production build is a static export in `out/`. The test command builds the site and runs rendered HTML smoke tests using Node's built-in test runner.
 
 ## Deployment
 
-Deploy the production Worker to Cloudflare with:
-
-```bash
-npm run deploy:vinext
-```
+Deploy through Cloudflare Pages using the **Next.js (Static HTML Export)** preset, `npm run build` as the build command, and `out` as the build output directory.
